@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./index.module.scss";
-const Title = ({ language }) => {
+const Title = ({ language, name }) => {
   return (
     <div className={styles.title}>
       <h3>
         {language == "Zh"
-          ? "雙龍七彩吊橋龍七彩吊橋龍七彩吊橋龍七彩吊橋龍七彩吊橋龍七彩吊橋龍七彩吊橋龍七彩吊橋龍七彩吊橋"
-          : "This is a series of animated short stories to help children learn English with their parents. Each story"}
+          ? "百步蛇傳說"
+          : "The legend of the hundred-step snake"}
       </h3>
     </div>
   );

@@ -3,6 +3,7 @@ import threeDot from "public/images/icon/threeDot.svg";
 import arrow from "public/images/icon/arrow.svg";
 import styles from "./index.module.scss";
 const Android = ({ language }) => {
+  console.log(language);
   const data = {
     Zh: {
       step1: `點選右上角的⋮符號。`,

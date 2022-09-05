@@ -11,48 +11,45 @@ const InfoPageData = {
     {
       icon: viewpointGuide.src,
       title: "景點介紹",
-      introduce: "介紹文介紹文介紹文介紹文介紹文介紹文介紹文紹文紹文紹文",
+      introduce: "查看此景點的相關介紹說明。",
     },
     {
       icon: languageGuide.src,
       title: "族語介紹",
-      introduce: "介紹文介紹文介紹文介紹文介紹文介紹文介紹文紹文紹文",
+      introduce: "提供族語語音導覽服務，為您介紹此景點的特色與故事。",
     },
     {
       icon: viewpointMap.src,
       title: "景點一覽",
-      introduce: "介紹文介紹文介紹文介紹文介紹文介紹文介紹文",
+      introduce: "顯示園區內的所有景點，點擊即可開啟該景點的AR頁面。",
     },
     {
       icon: language.src,
-      title: "系統語言",
-      introduce: "介紹文介紹文介紹文介紹文介紹文介紹文介紹文",
+      title: "語系顯示",
+      introduce: "提供您變更介面中顯示的語言。",
     },
   ],
   En: [
     {
       icon: viewpointGuide.src,
       title: "Introduce",
-      introduce:
-        "This is a series of animated short stories to help children learn ",
+      introduce: "Story or introduction of attractions. ",
     },
     {
       icon: languageGuide.src,
       title: "Audio",
       introduce:
-        "This is a series of animated short stories to help children, help children",
+        "Audio guide of ethnic language. Let’s know more about Isingan! ",
     },
     {
       icon: viewpointMap.src,
       title: "Attractions",
-      introduce:
-        "This is a series of animated short stories to help children learn help children",
+      introduce: "To view all attractions. Click to open the AR page.",
     },
     {
       icon: language.src,
       title: "Language",
-      introduce:
-        "This is a series of animated short stories to help children learn English  ",
+      introduce: "To change the language.",
     },
   ],
 };
@@ -60,7 +57,7 @@ const InfoPage = ({ setOpenItem, language }) => {
   const closeHandler = () => {
     setOpenItem(null);
   };
-
+  console.log(language);
   return (
     <div className={styles.infoPage}>
       <h3 className={styles.title}>

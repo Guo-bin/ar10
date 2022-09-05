@@ -5,4 +5,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  & img {
+    margin-bottom: 32px;
+  }
 }

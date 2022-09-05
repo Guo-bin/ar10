@@ -92,7 +92,7 @@ const ArPage = () => {
           </section>
         </div>
       ) : (
-        <Orientation />
+        <Orientation language={language} />
       )}
     </div>
   );
