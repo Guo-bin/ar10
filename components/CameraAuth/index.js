@@ -10,8 +10,9 @@ const CameraAuth = ({ language }) => {
 
   return (
     <div className={styles.cameraAuth}>
-      {phoneType == "IOS" && <IOS language={language} />}
-      {phoneType == "Android" && <Android language={language} />}
+      {/* {phoneType == "IOS" && <IOS language={language} />}
+      {phoneType == "Android" && <Android language={language} />} */}
+      123123
     </div>
   );
 };
