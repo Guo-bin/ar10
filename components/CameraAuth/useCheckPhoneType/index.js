@@ -5,7 +5,7 @@ const useCheckPhoneType = () => {
   useEffect(() => {
     const appDown = () => {
       let u = navigator.userAgent;
-      window.alert(u);
+
       let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
       let isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; //android终端
       if (isiOS) {
