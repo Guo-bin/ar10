@@ -15,7 +15,7 @@ const InfoPageData = {
     },
     {
       icon: languageGuide.src,
-      title: "族語介紹",
+      title: "族語導覽",
       introduce: "提供族語語音導覽服務，為您介紹此景點的特色與故事。",
     },
     {
