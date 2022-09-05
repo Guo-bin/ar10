@@ -6,6 +6,7 @@
   }
   & .step {
     margin-bottom: 24px;
+    height: fit-content;
     & h4 {
       margin-bottom: 4px;
     }
@@ -34,7 +35,7 @@
     }
     & .step {
       width: 50%;
-      margin: auto;
+      margin: 0 auto;
       margin-bottom: 24px;
       & h4 {
         margin-bottom: 4px;
