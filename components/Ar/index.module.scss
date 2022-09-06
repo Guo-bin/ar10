@@ -1,14 +1,14 @@
 .container {
-  position: relative;
-  height: calc(100vh);
-  // height: 100%;
+  position: fixed;
+  // height: calc(100vh + 1px);
+  height: 100%;
   width: 100vw;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 @media (max-width: 530px) {
   .container {
-    height: calc(100vh);
+    // height: calc(100vh + 1px);
     height: 100%;
     width: 100vw;
     & .video {
