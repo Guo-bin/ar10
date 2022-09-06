@@ -21,7 +21,10 @@ const ArPage = () => {
 
   useEffect(() => {
     const body = document.querySelector("body");
-    body.style.overflow = "hidden";
+    const html = document.querySelector("html");
+    // body.style.overflow = "hidden";
+    body.classList.add("arBody");
+    html.classList.add("arBody");
     if (windowSize.height > windowSize.width) {
       setOrientation(true);
     } else {
