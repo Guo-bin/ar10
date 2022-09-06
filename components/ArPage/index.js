@@ -23,8 +23,8 @@ const ArPage = () => {
     const body = document.querySelector("body");
     const html = document.querySelector("html");
     // body.style.overflow = "hidden";
-    body.classList.add("arBody");
-    html.classList.add("arBody");
+    // body.classList.add("arBody");
+    // html.classList.add("arBody");
     if (windowSize.height > windowSize.width) {
       setOrientation(true);
     } else {

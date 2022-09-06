@@ -71,9 +71,9 @@ const Entry = () => {
     const body = document.querySelector("body");
     const html = document.querySelector("html");
     // body.style.overflow = "hidden";
-    body.classList.remove("arBody");
-    html.classList.remove("arBody");
-    body.style.overflow = "auto";
+    // body.classList.remove("arBody");
+    // html.classList.remove("arBody");
+    // body.style.overflow = "auto";
 
     const setUserDefaultLanguage = () => {
       const userLanguage =
