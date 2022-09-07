@@ -31,7 +31,11 @@ const ImageExamplePage = ({
     router.push("/");
   };
   return (
-    <div className={styles.imageExamplePage}>
+    <div
+      className={styles.imageExamplePage}
+      onClick={(e) => {
+        e.preventDefault();
+      }}>
       {isBtnShow && (
         <div className={styles.close}>
           <img src={close.src} alt='' onClick={closeHandler} />
