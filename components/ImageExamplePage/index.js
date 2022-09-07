@@ -38,7 +38,7 @@ const ImageExamplePage = ({
       }}>
       {isBtnShow && (
         <div className={styles.close}>
-          <img src={close.src} alt='' onClick={closeHandler} />
+          <img src={close.src} alt='' onTouchStart={closeHandler} />
         </div>
       )}
       {!isBtnShow && (
