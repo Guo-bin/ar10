@@ -33,11 +33,8 @@ const ImageExamplePage = ({
   return (
     <div
       className={styles.imageExamplePage}
-      onTouchStart={(e) => {
-        e.preventDefault();
-      }}
       onTouchMove={(e) => {
-        e.preventDefault();
+        e.stopPropagation();
       }}>
       {isBtnShow && (
         <div className={styles.close}>

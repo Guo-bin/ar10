@@ -16,7 +16,7 @@ const ArPage = () => {
   const [isBtnShow, setBtnIsShow] = useState(false);
   const [language, setLanguage] = useState("Zh");
   const [orientation, setOrientation] = useState(null);
-  const [CmaIsOpen, setCmaIsOpen] = useState(false);
+  const [CmaIsOpen, setCmaIsOpen] = useState(true);
   const windowSize = useWindowSize();
   const router = useRouter();
 
@@ -47,26 +47,30 @@ const ArPage = () => {
     } else {
       setLanguage(router.query.language);
     }
-    if (typeof window !== undefined) {
-      navigator.mediaDevices
-        .getUserMedia({ video: { facingMode: "environment" } })
-        .then((e) => {
-          setCmaIsOpen(true);
-        })
-        .catch((e) => {
-          setCmaIsOpen(false);
-        });
-    }
+    // if (typeof window !== undefined) {
+    //   navigator.mediaDevices
+    //     .getUserMedia({ video: { facingMode: "environment" } })
+    //     .then((e) => {
+    //       setCmaIsOpen(true);
+    //     })
+    //     .catch((e) => {
+    //       setCmaIsOpen(false);
+    //     });
+    // }
   }, []);
   return (
-    <div className={styles.arPage}>
+    <div
+      className={styles.arPage}
+      onTouchStart={(e) => {
+        e.stopPropagation();
+      }}>
       <Script
         data-consolejs-channel='1721b168-7617-27b4-f757-00d25e356943'
         src='https://remotejs.com/agent/agent.js'
       />
-      {!CmaIsOpen && (
+      {/* {!CmaIsOpen && (
         <CameraAuth language={language} setLanguage={setLanguage} />
-      )}
+      )} */}
       {orientation ? (
         <div className={styles.interface}>
           {openItem !== "AttractionsPage" && openItem !== "IntroPage" && (
