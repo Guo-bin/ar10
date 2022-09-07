@@ -2,14 +2,14 @@
   position: relative;
   z-index: 2;
   background-color: transparent;
+  height: calc(100vh + 10px);
   & .interface {
-    height: calc(100vh);
-    // height: 100%;
-    top: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    overflow: hidden;
+    height: 100%;
+    // top: 0;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // overflow: hidden;
   }
 
   & .cmaIsOpen {
