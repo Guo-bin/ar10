@@ -1,4 +1,5 @@
 import React, { useEffect, useState, memo, useLayoutEffect } from "react";
+import Script from "next/script";
 import { useRouter } from "next/router";
 import Nav from "components/Nav";
 import IntroPage from "components/IntroPage";
@@ -59,6 +60,10 @@ const ArPage = () => {
   }, []);
   return (
     <div className={styles.arPage}>
+      <Script
+        data-consolejs-channel='1721b168-7617-27b4-f757-00d25e356943'
+        src='https://remotejs.com/agent/agent.js'
+      />
       {!CmaIsOpen && (
         <CameraAuth language={language} setLanguage={setLanguage} />
       )}
