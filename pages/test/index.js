@@ -7,8 +7,8 @@ const DynamicArjs = dynamic(() => import("../../components/Ar"), {
 function TestAr({ target }) {
   return (
     <div>
-      <DynamicArjs targetUrl={`/mind/${target}.mind`} model='/glb/women.glb' />
-      {/* <ArPageComponent /> */}
+      {/* <DynamicArjs targetUrl={`/mind/${target}.mind`} model='/glb/women.glb' /> */}
+      <ArPageComponent />
     </div>
   );
 }
