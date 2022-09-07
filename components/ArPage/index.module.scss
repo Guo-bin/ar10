@@ -1,7 +1,6 @@
 .arPage {
   position: relative;
   z-index: 2;
-  background-color: transparent;
   height: calc(100vh + 10px);
   & .interface {
     height: 100%;
@@ -12,13 +11,13 @@
     // overflow: hidden;
   }
 
-  & .cmaIsOpen {
-    height: 100vh;
-    top: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    z-index: 50;
-  }
+  // & .cmaIsOpen {
+  //   height: 100vh;
+  //   top: 0;
+  //   position: fixed;
+  //   left: 0;
+  //   right: 0;
+  //   background-color: #fff;
+  //   z-index: 50;
+  // }
 }

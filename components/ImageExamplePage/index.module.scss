@@ -11,6 +11,7 @@
   margin: auto;
   z-index: 1;
   animation: scaleUp 0.5s;
+  overflow: hidden;
   & .close {
     margin: 16px;
     width: 32px;
