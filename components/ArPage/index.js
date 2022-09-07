@@ -67,13 +67,15 @@ const ArPage = () => {
           {openItem !== "AttractionsPage" && openItem !== "IntroPage" && (
             <Title language={language} />
           )}
+          {CmaIsOpen && (
+            <Nav
+              setOpenItem={setOpenItem}
+              openItem={openItem}
+              setLanguage={setLanguage}
+              language={language}
+            />
+          )}
 
-          <Nav
-            setOpenItem={setOpenItem}
-            openItem={openItem}
-            setLanguage={setLanguage}
-            language={language}
-          />
           <section className={styles.pageContainer}>
             {openItem == "ImageExamplePage" && (
               <ImageExamplePage
