@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Nav from "components/Nav";
 import IntroPage from "components/IntroPage";
 import useWindowSize from "utils/windowSize";
+import classnames from "classnames";
 import AttractionsPage from "components/AttractionsPage";
 import ImageExamplePage from "components/ImageExamplePage";
 import Title from "components/Title";
@@ -17,6 +18,7 @@ const ArPage = () => {
   const [language, setLanguage] = useState("Zh");
   const [orientation, setOrientation] = useState(null);
   const [CmaIsOpen, setCmaIsOpen] = useState(true);
+  const [banScroll, setBanScroll] = useState(true);
   const windowSize = useWindowSize();
   const router = useRouter();
 
@@ -58,12 +60,24 @@ const ArPage = () => {
     //     });
     // }
   }, []);
+
+  useEffect(() => {
+    const isBanScroll =
+      openItem == null ||
+      openItem == "ChangeLanguage" ||
+      openItem == "LanguageGuide" ||
+      openItem == "";
+    if (isBanScroll) {
+      setBanScroll(false);
+    } else {
+      setBanScroll(true);
+    }
+  }, [openItem]);
   return (
     <div
-      className={styles.arPage}
-      onTouchStart={(e) => {
-        e.stopPropagation();
-      }}>
+      className={classnames(styles.arPage, {
+        [styles.isBanScroll]: banScroll,
+      })}>
       <Script
         data-consolejs-channel='1721b168-7617-27b4-f757-00d25e356943'
         src='https://remotejs.com/agent/agent.js'

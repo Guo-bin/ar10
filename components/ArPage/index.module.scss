@@ -5,10 +5,15 @@
   background-color: transparent;
   & .interface {
     height: 100%;
-    // top: 0;
     position: relative;
-    // left: 0;
-    // right: 0;
-    // overflow: hidden;
+  }
+}
+
+.isBanScroll {
+  position: fixed;
+
+  background-color: transparent;
+  & .interface {
+    position: fixed;
   }
 }
