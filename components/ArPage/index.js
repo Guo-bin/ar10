@@ -23,9 +23,6 @@ const ArPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const body = document.querySelector("body");
-    const html = document.querySelector("html");
-    // body.style.overflow = "hidden";
     // body.classList.add("arBody");
     // html.classList.add("arBody");
     if (windowSize.height > windowSize.width) {
@@ -62,6 +59,7 @@ const ArPage = () => {
   }, []);
 
   useEffect(() => {
+    const body = document.querySelector("body");
     const isBanScroll =
       openItem == null ||
       openItem == "ChangeLanguage" ||
@@ -69,15 +67,14 @@ const ArPage = () => {
       openItem == "";
     if (isBanScroll) {
       setBanScroll(false);
+      body.style.overflow = "auto";
     } else {
+      body.style.overflow = "hidden";
       setBanScroll(true);
     }
   }, [openItem]);
   return (
-    <div
-      className={classnames(styles.arPage, {
-        [styles.isBanScroll]: banScroll,
-      })}>
+    <div className={styles.arPage}>
       <Script
         data-consolejs-channel='1721b168-7617-27b4-f757-00d25e356943'
         src='https://remotejs.com/agent/agent.js'
