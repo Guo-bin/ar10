@@ -8,7 +8,7 @@ function TestAr({ target }) {
   return (
     <div>
       <DynamicArjs targetUrl={`/mind/${target}.mind`} model='/glb/women.glb' />
-      <ArPageComponent />
+      {/* <ArPageComponent /> */}
     </div>
   );
 }
