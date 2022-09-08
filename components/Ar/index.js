@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 const Ar = ({ targetUrl, model }) => {
   const sceneRef = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const sceneEl = sceneRef.current;
     if (sceneEl) {
       const arSystem = sceneEl.systems["mindar-image-system"];
@@ -27,6 +27,14 @@ const Ar = ({ targetUrl, model }) => {
     };
   }, [sceneRef.current]);
 
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: "environment" } })
+        .then((e) => {})
+        .catch((e) => {});
+    }
+  }, []);
   return (
     <>
       <div className={styles.container} id='container'>
