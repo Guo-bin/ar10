@@ -10,11 +10,7 @@ function TestAr({ target }) {
   const router = useRouter();
   return (
     <div>
-      <DynamicArjs
-        targetUrl={`/mind/${target}.mind`}
-        key={router.asPath + uuidv4()}
-        model='/glb/women.glb'
-      />
+      <DynamicArjs targetUrl={`/mind/${target}.mind`} model='/glb/women.glb' />
       {/* <ArPageComponent /> */}
     </div>
   );
