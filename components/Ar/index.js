@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import "mind-ar/dist/mindar-image.prod.js";
 import "aframe";
 import "mind-ar/dist/mindar-image-aframe.prod.js";
