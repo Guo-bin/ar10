@@ -57,7 +57,7 @@ const ArPage = () => {
     //     });
     // }
   }, []);
-
+  console.log("ASD");
   useEffect(() => {
     const body = document.querySelector("body");
     const isBanScroll =
@@ -76,7 +76,7 @@ const ArPage = () => {
   return (
     <div className={styles.arPage}>
       <Script
-        data-consolejs-channel='1721b168-7617-27b4-f757-00d25e356943'
+        data-consolejs-channel='8539321f-411e-973d-a964-4fad26b49644'
         src='https://remotejs.com/agent/agent.js'
       />
       {/* {!CmaIsOpen && (

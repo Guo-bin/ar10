@@ -5,7 +5,9 @@
   // left: 0;
   // right: 0;
   // margin: auto;
-  height: calc(100vh + 10px);
+  height: calc(
+    100vh + 10px
+  ); //這邊設定100vh+10px，設定%數的話，這邊會去抓body的100%，body是被arPage撐大成100vh+100px，所以這邊也會變成100vh+100px，但這樣太大了所以寫固定高度100vh+10px，(其實可以寫100vh就好?)
   // height: 100%;
   width: 100vw;
   // overflow: hidden;
