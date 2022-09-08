@@ -46,16 +46,16 @@ const ArPage = () => {
     } else {
       setLanguage(router.query.language);
     }
-    // if (typeof window !== undefined) {
-    //   navigator.mediaDevices
-    //     .getUserMedia({ video: { facingMode: "environment" } })
-    //     .then((e) => {
-    //       setCmaIsOpen(true);
-    //     })
-    //     .catch((e) => {
-    //       setCmaIsOpen(false);
-    //     });
-    // }
+    if (typeof window !== undefined) {
+      navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: "environment" } })
+        .then((e) => {
+          setCmaIsOpen(true);
+        })
+        .catch((e) => {
+          setCmaIsOpen(false);
+        });
+    }
   }, []);
   console.log("ASD");
   useEffect(() => {
@@ -79,9 +79,9 @@ const ArPage = () => {
         data-consolejs-channel='8539321f-411e-973d-a964-4fad26b49644'
         src='https://remotejs.com/agent/agent.js'
       />
-      {/* {!CmaIsOpen && (
+      {!CmaIsOpen && (
         <CameraAuth language={language} setLanguage={setLanguage} />
-      )} */}
+      )}
       {orientation ? (
         <div className={styles.interface}>
           {openItem !== "AttractionsPage" && openItem !== "IntroPage" && (
