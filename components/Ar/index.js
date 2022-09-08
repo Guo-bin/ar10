@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import Script from "next/script";
 import "mind-ar/dist/mindar-image.prod.js";
 import "aframe";
@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 const Ar = ({ targetUrl, model }) => {
   const sceneRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const sceneEl = sceneRef.current;
     if (sceneEl) {
       const arSystem = sceneEl.systems["mindar-image-system"];
