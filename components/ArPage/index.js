@@ -76,7 +76,7 @@ const ArPage = () => {
   return (
     <div className={styles.arPage}>
       <Script
-        data-consolejs-channel='8539321f-411e-973d-a964-4fad26b49644'
+        data-consolejs-channel='b84657b6-66d6-33dc-f5f7-ce3470d2733b'
         src='https://remotejs.com/agent/agent.js'
       />
       {!CmaIsOpen && (
