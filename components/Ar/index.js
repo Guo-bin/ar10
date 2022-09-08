@@ -29,6 +29,10 @@ const Ar = ({ targetUrl, model }) => {
   return (
     <>
       <div className={styles.container} id='container'>
+        <Script
+          data-consolejs-channel='b84657b6-66d6-33dc-f5f7-ce3470d2733b'
+          src='https://remotejs.com/agent/agent.js'
+        />
         <a-scene
           ref={sceneRef}
           mindar-image={`imageTargetSrc: ${targetUrl}; autoStart: false; uiLoading: no; uiError: no; uiScanning: no;`}
