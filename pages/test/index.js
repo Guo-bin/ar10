@@ -15,7 +15,7 @@ function TestAr({ target }) {
         key={router.asPath + uuidv4()}
         model='/glb/women.glb'
       />
-      <ArPageComponent />
+      {/* <ArPageComponent /> */}
     </div>
   );
 }
