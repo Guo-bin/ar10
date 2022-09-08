@@ -20,21 +20,12 @@ const Ar = ({ targetUrl, model }) => {
     return () => {
       if (sceneEl) {
         const arSystem = sceneEl.systems["mindar-image-system"];
-        sceneEl.addEventListener("renderstart", () => {
-          arSystem.stop(); // stop AR
-        });
+
+        arSystem.stop(); // stop AR
       }
     };
   }, [sceneRef.current]);
 
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      navigator.mediaDevices
-        .getUserMedia({ video: { facingMode: "environment" } })
-        .then((e) => {})
-        .catch((e) => {});
-    }
-  }, []);
   return (
     <>
       <div className={styles.container} id='container'>
