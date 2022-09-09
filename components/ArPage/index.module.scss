@@ -1,33 +1,33 @@
 .arPage {
-  position: relative;
-  z-index: 2;
-  height: calc(100vh + 100px);
-  background-color: transparent;
-  & .interface {
-    height: 100%;
-    position: relative;
-  }
+  // position: relative;
+  // z-index: 2;
+  height: calc(100vh + 200px);
+  // background-color: transparent;
+  // & .interface {
+  //   height: 100%;
+  //   position: relative;
+  // }
 }
 
-.isBanScroll {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 2;
-  background-color: transparent;
-  & .interface {
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-  }
-}
+// .isBanScroll {
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   z-index: 2;
+//   background-color: transparent;
+//   & .interface {
+//     height: 100%;
+//     top: 0;
+//     bottom: 0;
+//     position: fixed;
+//     left: 0;
+//     right: 0;
+//     overflow: hidden;
+//   }
+// }
 // .arPage {
 //   position: fixed;
 //   top: 0;

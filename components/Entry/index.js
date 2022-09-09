@@ -73,8 +73,8 @@ const Entry = () => {
     // body.style.overflow = "hidden";
     // body.classList.remove("arBody");
     // html.classList.remove("arBody");
+    // html.style.overflow = "auto";
     body.style.overflow = "auto";
-
     const setUserDefaultLanguage = () => {
       const userLanguage =
         window.navigator.userLanguage || window.navigator.language;

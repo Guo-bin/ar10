@@ -46,19 +46,20 @@ const ArPage = () => {
     } else {
       setLanguage(router.query.language);
     }
-    if (typeof window !== undefined) {
-      navigator.mediaDevices
-        .getUserMedia({ video: { facingMode: "environment" } })
-        .then((e) => {
-          setCmaIsOpen(true);
-        })
-        .catch((e) => {
-          setCmaIsOpen(false);
-        });
-    }
+    // if (typeof window !== undefined) {
+    //   navigator.mediaDevices
+    //     .getUserMedia({ video: { facingMode: "environment" } })
+    //     .then((e) => {
+    //       setCmaIsOpen(true);
+    //     })
+    //     .catch((e) => {
+    //       setCmaIsOpen(false);
+    //     });
+    // }
   }, []);
   console.log("ASD");
   useEffect(() => {
+    const html = document.querySelector("html");
     const body = document.querySelector("body");
     const isBanScroll =
       openItem == null ||
@@ -67,8 +68,10 @@ const ArPage = () => {
       openItem == "";
     if (isBanScroll) {
       setBanScroll(false);
+      // html.style.overflow = "auto";
       body.style.overflow = "auto";
     } else {
+      // html.style.overflow = "hidden";
       body.style.overflow = "hidden";
       setBanScroll(true);
     }

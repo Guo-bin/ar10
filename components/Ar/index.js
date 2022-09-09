@@ -10,14 +10,20 @@ const Ar = ({ targetUrl, model }) => {
 
   useEffect(() => {
     const sceneEl = sceneRef.current;
-
-    const arSystem = sceneEl.systems["mindar-image-system"];
-    sceneEl.addEventListener("renderstart", () => {
-      arSystem.start(); // start AR
-    });
+    if (sceneEl) {
+      const arSystem = sceneEl.systems["mindar-image-system"];
+      sceneEl.addEventListener("renderstart", () => {
+        arSystem.start(); // start AR
+      });
+    }
 
     return () => {
-      arSystem.stop(); // stop AR
+      if (sceneEl) {
+        const arSystem = sceneEl.systems["mindar-image-system"];
+        sceneEl.addEventListener("renderstart", () => {
+          arSystem.stop(); // stop AR
+        });
+      }
     };
   }, [sceneRef.current]);
 
