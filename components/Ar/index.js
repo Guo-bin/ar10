@@ -26,7 +26,7 @@ const Ar = ({ targetUrl, model }) => {
   //     }
   //   };
   // }, [sceneRef.current]);
-  useLayoutEffect(() => {
+  useEffect(() => {
     const sceneEl = sceneRef.current;
     const arSystem = sceneEl.systems["mindar-image-system"];
     sceneEl.addEventListener("renderstart", () => {
