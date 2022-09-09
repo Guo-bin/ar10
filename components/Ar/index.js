@@ -8,25 +8,34 @@ import styles from "./index.module.scss";
 const Ar = ({ targetUrl, model }) => {
   const sceneRef = useRef(null);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const sceneEl = sceneRef.current;
+  //   if (sceneEl) {
+  //     const arSystem = sceneEl.systems["mindar-image-system"];
+  //     sceneEl.addEventListener("renderstart", () => {
+  //       arSystem.start(); // start AR
+  //     });
+  //   }
+
+  //   return () => {
+  //     if (sceneEl) {
+  //       const arSystem = sceneEl.systems["mindar-image-system"];
+  //       sceneEl.addEventListener("renderstart", () => {
+  //         arSystem.stop(); // stop AR
+  //       });
+  //     }
+  //   };
+  // }, [sceneRef.current]);
+  useLayoutEffect(() => {
     const sceneEl = sceneRef.current;
-    if (sceneEl) {
-      const arSystem = sceneEl.systems["mindar-image-system"];
-      sceneEl.addEventListener("renderstart", () => {
-        arSystem.start(); // start AR
-      });
-    }
-
+    const arSystem = sceneEl.systems["mindar-image-system"];
+    sceneEl.addEventListener("renderstart", () => {
+      arSystem.start(); // start AR
+    });
     return () => {
-      if (sceneEl) {
-        const arSystem = sceneEl.systems["mindar-image-system"];
-        sceneEl.addEventListener("renderstart", () => {
-          arSystem.stop(); // stop AR
-        });
-      }
+      arSystem.stop();
     };
-  }, [sceneRef.current]);
-
+  }, []);
   return (
     <>
       <div className={styles.container} id='container'>
