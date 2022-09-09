@@ -46,16 +46,16 @@ const ArPage = () => {
     } else {
       setLanguage(router.query.language);
     }
-    // if (typeof window !== undefined) {
-    //   navigator.mediaDevices
-    //     .getUserMedia({ video: { facingMode: "environment" } })
-    //     .then((e) => {
-    //       setCmaIsOpen(true);
-    //     })
-    //     .catch((e) => {
-    //       setCmaIsOpen(false);
-    //     });
-    // }
+    if (typeof window !== undefined) {
+      navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: "environment" } })
+        .then((e) => {
+          setCmaIsOpen(true);
+        })
+        .catch((e) => {
+          setCmaIsOpen(false);
+        });
+    }
   }, []);
   console.log("ASD");
   useEffect(() => {

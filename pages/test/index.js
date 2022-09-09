@@ -17,15 +17,15 @@ function TestAr({ target }) {
   });
   return (
     <div>
-      {a && (
+      {/* {a && (
         <DynamicArjs
           targetUrl={`/mind/${target}.mind`}
           model='/glb/women.glb'
           key={router.asPath + uuidv4()}
         />
-      )}
+      )} */}
 
-      {/* <ArPageComponent /> */}
+      <ArPageComponent />
     </div>
   );
 }
