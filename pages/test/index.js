@@ -25,7 +25,7 @@ function TestAr({ target }) {
         />
       )}
 
-      <ArPageComponent />
+      {/* <ArPageComponent /> */}
     </div>
   );
 }
