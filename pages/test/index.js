@@ -11,7 +11,7 @@ function TestAr({ target }) {
   const router = useRouter();
   const [a, setA] = useState(true);
   useEffect(() => {
-    window.addEventListener("beforeunload", () => {
+    window.addEventListener("unload", () => {
       setA(false);
     });
   });
