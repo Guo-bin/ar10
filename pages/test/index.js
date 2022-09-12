@@ -18,7 +18,7 @@ function TestAr({ target }) {
         key={router.asPath + uuidv4()}
       />
 
-      {/* <ArPageComponent /> */}
+      <ArPageComponent />
     </div>
   );
 }
