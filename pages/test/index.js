@@ -9,23 +9,16 @@ const DynamicArjs = dynamic(() => import("../../components/Ar"), {
 
 function TestAr({ target }) {
   const router = useRouter();
-  const [a, setA] = useState(true);
-  useEffect(() => {
-    window.addEventListener("unload", () => {
-      setA(false);
-    });
-  });
+
   return (
     <div>
-      {/* {a && (
-        <DynamicArjs
-          targetUrl={`/mind/${target}.mind`}
-          model='/glb/women.glb'
-          key={router.asPath + uuidv4()}
-        />
-      )} */}
+      <DynamicArjs
+        targetUrl={`/mind/${target}.mind`}
+        model='/glb/women.glb'
+        key={router.asPath + uuidv4()}
+      />
 
-      <ArPageComponent />
+      {/* <ArPageComponent /> */}
     </div>
   );
 }

@@ -8,34 +8,33 @@ import styles from "./index.module.scss";
 const Ar = ({ targetUrl, model }) => {
   const sceneRef = useRef(null);
 
-  // useEffect(() => {
-  //   const sceneEl = sceneRef.current;
-  //   if (sceneEl) {
-  //     const arSystem = sceneEl.systems["mindar-image-system"];
-  //     sceneEl.addEventListener("renderstart", () => {
-  //       arSystem.start(); // start AR
-  //     });
-  //   }
-
-  //   return () => {
-  //     if (sceneEl) {
-  //       const arSystem = sceneEl.systems["mindar-image-system"];
-  //       sceneEl.addEventListener("renderstart", () => {
-  //         arSystem.stop(); // stop AR
-  //       });
-  //     }
-  //   };
-  // }, [sceneRef.current]);
   useEffect(() => {
     const sceneEl = sceneRef.current;
-    const arSystem = sceneEl.systems["mindar-image-system"];
-    sceneEl.addEventListener("renderstart", () => {
-      arSystem.start(); // start AR
-    });
+    if (sceneEl) {
+      const arSystem = sceneEl.systems["mindar-image-system"];
+      sceneEl.addEventListener("renderstart", () => {
+        arSystem.start(); // start AR
+      });
+    }
+
     return () => {
-      arSystem.stop();
+      if (sceneEl) {
+        const arSystem = sceneEl.systems["mindar-image-system"];
+
+        arSystem.stop(); // stop AR
+      }
     };
-  }, []);
+  }, [sceneRef.current]);
+  // useEffect(() => {
+  //   const sceneEl = sceneRef.current;
+  //   const arSystem = sceneEl.systems["mindar-image-system"];
+  //   sceneEl.addEventListener("renderstart", () => {
+  //     arSystem.start(); // start AR
+  //   });
+  //   return () => {
+  //     arSystem.stop();
+  //   };
+  // }, []);
   return (
     <>
       <div className={styles.container} id='container'>

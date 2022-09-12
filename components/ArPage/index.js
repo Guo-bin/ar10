@@ -17,7 +17,7 @@ const ArPage = () => {
   const [isBtnShow, setBtnIsShow] = useState(false);
   const [language, setLanguage] = useState("Zh");
   const [orientation, setOrientation] = useState(null);
-  const [CmaIsOpen, setCmaIsOpen] = useState(true);
+  const [CmaIsOpen, setCmaIsOpen] = useState(false);
   const [banScroll, setBanScroll] = useState(true);
   const windowSize = useWindowSize();
   const router = useRouter();
