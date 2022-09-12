@@ -8,23 +8,23 @@ import styles from "./index.module.scss";
 const Ar = ({ targetUrl, model }) => {
   const sceneRef = useRef(null);
 
-  // useEffect(() => {
-  //   const sceneEl = sceneRef.current;
-  //   if (sceneEl) {
-  //     const arSystem = sceneEl.systems["mindar-image-system"];
-  //     sceneEl.addEventListener("renderstart", () => {
-  //       arSystem.start(); // start AR
-  //     });
-  //   }
+  useEffect(() => {
+    const sceneEl = sceneRef.current;
+    // if (sceneEl) {
+    //   const arSystem = sceneEl.systems["mindar-image-system"];
+    //   sceneEl.addEventListener("renderstart", () => {
+    //     arSystem.start(); // start AR
+    //   });
+    // }
 
-  //   return () => {
-  //     if (sceneEl) {
-  //       const arSystem = sceneEl.systems["mindar-image-system"];
+    return () => {
+      if (sceneEl) {
+        const arSystem = sceneEl.systems["mindar-image-system"];
 
-  //       arSystem.stop(); // stop AR
-  //     }
-  //   };
-  // }, [sceneRef.current]);
+        arSystem.stop(); // stop AR
+      }
+    };
+  }, [sceneRef.current]);
   // useEffect(() => {
   //   const sceneEl = sceneRef.current;
   //   const arSystem = sceneEl.systems["mindar-image-system"];
@@ -47,6 +47,7 @@ const Ar = ({ targetUrl, model }) => {
           vr-mode-ui='enabled: false'
           device-orientation-permission-ui='enabled: false'> */}
         <a-scene
+          ref={sceneRef}
           mindar-image={`imageTargetSrc:${targetUrl};uiLoading: no;uiScanning: no;`}
           color-space='sRGB'
           renderer='colorManagement: true, physicallyCorrectLights'
