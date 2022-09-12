@@ -20,7 +20,6 @@ const Ar = ({ targetUrl, model }) => {
     return () => {
       if (sceneEl) {
         const arSystem = sceneEl.systems["mindar-image-system"];
-
         arSystem.stop(); // stop AR
       }
     };
@@ -50,6 +49,7 @@ const Ar = ({ targetUrl, model }) => {
           ref={sceneRef}
           mindar-image={`imageTargetSrc:${targetUrl};uiLoading: no;uiScanning: no;`}
           color-space='sRGB'
+          embedded
           renderer='colorManagement: true, physicallyCorrectLights'
           vr-mode-ui='enabled: false'
           device-orientation-permission-ui='enabled: false'>
