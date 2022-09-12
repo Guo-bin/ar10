@@ -20,8 +20,9 @@ const Ar = ({ targetUrl, model }) => {
     return () => {
       if (sceneEl) {
         const arSystem = sceneEl.systems["mindar-image-system"];
-
-        arSystem.stop(); // stop AR
+        sceneEl.addEventListener("renderstart", () => {
+          arSystem.stop(); // stop AR
+        });
       }
     };
   }, [sceneRef.current]);
