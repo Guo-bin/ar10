@@ -1,5 +1,10 @@
 import React from "react";
 import Close from "public/images/icon/viewpointGuidClose.svg";
+
+import View2 from "./View2";
+import View3 from "./View3";
+import View4 from "./View4";
+
 import View from "./View";
 import styles from "./index.module.scss";
 const AttractionsPage = ({ setOpenItem, language }) => {
@@ -14,15 +19,14 @@ const AttractionsPage = ({ setOpenItem, language }) => {
         </h3>
 
         <div className={styles.viewpointContainer}>
+          {/* <View language={language} target='sun' img={sun.src} />
+          <View language={language} target='snack' img={snake.src} />
+          <View language={language} target='water' img={water.src} />
+          <View language={language} target='original' img={original.src} /> */}
           <View language={language} />
-          <View language={language} />
-          <View language={language} />
-          <View language={language} />
-          <View language={language} data={"AASDADASDASDASDASDASDASDASDSDASD"} />
-          <View language={language} />
-          <View language={language} />
-          <View language={language} />
-          <View language={language} />
+          <View2 language={language} />
+          <View3 language={language} />
+          <View4 language={language} />
         </div>
       </div>
       <div className={styles.close}>
