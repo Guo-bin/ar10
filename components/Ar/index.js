@@ -17,6 +17,10 @@ const Ar = ({ targetUrl, model }) => {
     //   });
     // }
 
+    const exampleTarget = document.querySelector("#example-target");
+    exampleTarget.addEventListener("targetFound", (event) => {
+      console.log("target found");
+    });
     return () => {
       if (sceneEl) {
         const arSystem = sceneEl.systems["mindar-image-system"];
@@ -57,10 +61,10 @@ const Ar = ({ targetUrl, model }) => {
             <a-asset-item id='avatarModel' src={model}></a-asset-item>
           </a-assets>
           <a-camera position='0 0 0' look-controls='enabled: false'></a-camera>
-          <a-entity mindar-image-target='targetIndex: 0'>
+          <a-entity mindar-image-target='targetIndex: 0' id='example-target'>
             <a-gltf-model
               rotation='0 0 0 '
-              position='0.4 -0.4 0'
+              position='0 0 0'
               scale='0.003 0.003 0.003'
               src='#avatarModel'
               animation-mixer='clip:Bip001|Take 001|BaseLayer'></a-gltf-model>
