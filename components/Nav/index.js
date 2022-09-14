@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import Info from "./Info";
+import { useRouter } from "next/router";
 import LanguageGuide from "./LanguageGuide";
 import classnames from "classnames";
 import Intro from "./Intro";
@@ -9,6 +10,7 @@ import ChangeLanguage from "./ChangeLanguage";
 import Thumbnail from "./Thumbnail";
 import styles from "./index.module.scss";
 const Nav = ({ setOpenItem, openItem, language, setLanguage }) => {
+  const router = useRouter();
   const clickItemHandler = (e) => {
     const clickItemName = e.target.id;
     if (openItem !== clickItemName) {
@@ -36,7 +38,7 @@ const Nav = ({ setOpenItem, openItem, language, setLanguage }) => {
           language={language}
         />
       </div>
-      <div className={styles.languagePlayer}>
+      <div className={styles.languagePlayer} key={router.asPath}>
         <AudioPlayer setOpenItem={setOpenItem} openItem={openItem} />
       </div>
     </nav>
