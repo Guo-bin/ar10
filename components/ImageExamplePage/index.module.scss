@@ -11,6 +11,7 @@
   margin: auto;
   z-index: 1;
   animation: scaleUp 0.8s;
+  filter: blur(3px);
   // backdrop-filter: blur(3px);
   box-shadow: 0px 8px 60px #ffffff;
   & .close {
