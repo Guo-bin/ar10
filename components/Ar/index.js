@@ -10,7 +10,7 @@ const Ar = ({ content, host, setTargetFound, targetFound }) => {
     const position = `${content.position.x} ${content.position.y} ${content.position.z}`;
     const sceneRef = useRef(null);
     const router = useRouter();
-
+    const url = "https://cipar.cacdidemo.com/";
     useEffect(() => {
         const sceneEl = sceneRef.current;
         const exampleTarget = document.querySelector("#example-target");
@@ -68,14 +68,14 @@ const Ar = ({ content, host, setTargetFound, targetFound }) => {
             <div className={styles.container} id="container">
                 {!mind && !ARProUrl[router.query.language] && (
                     <div className={styles.background}>
-                        <img src={closeUpImg} alt="" />
+                        <img src={url + closeUpImg} alt="" />
                     </div>
                 )}
                 {mind && ARProUrl && (
                     <a-scene
                         autoClear={true}
                         ref={sceneRef}
-                        mindar-image={`imageTargetSrc:${mind};uiScanning: no;uiLoading: no;`}
+                        mindar-image={`imageTargetSrc:${url + mind};uiScanning: no;uiLoading: no;`}
                         color-space="sRGB"
                         embedded
                         renderer="colorManagement: true, physicallyCorrectLights"
@@ -83,7 +83,7 @@ const Ar = ({ content, host, setTargetFound, targetFound }) => {
                         device-orientation-permission-ui="enabled: false"
                     >
                         <a-assets>
-                            <a-asset-item id="avatarModel" src={ARProUrl[router.query.language]}></a-asset-item>
+                            <a-asset-item id="avatarModel" src={url + ARProUrl[router.query.language]}></a-asset-item>
                         </a-assets>
                         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
                         <a-entity mindar-image-target="targetIndex: 0" id="example-target">
