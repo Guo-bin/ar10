@@ -8,7 +8,7 @@ const Intro = ({ language }) => {
         <img className={styles.icon} src={icon.src} alt='' />
       </div>
 
-      <p className={styles.title}>{language == "Zh" ? "景點介紹" : "Intro"}</p>
+      <p className={styles.title}>{language == "zh" ? "景點介紹" : "Intro"}</p>
     </div>
   );
 };

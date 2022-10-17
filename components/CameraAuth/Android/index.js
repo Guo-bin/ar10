@@ -3,15 +3,14 @@ import threeDot from "public/images/icon/threeDot.svg";
 import arrow from "public/images/icon/arrow.svg";
 import styles from "./index.module.scss";
 const Android = ({ language }) => {
-  console.log(language);
   const data = {
-    Zh: {
+    zh: {
       step1: `點選右上角的⋮符號。`,
       step2: "選擇設定 > 進階 > 網站設定 > 攝影機。",
       step3: "在已封鎖的網址裡找到該服務網址並允許使用權限。",
       step4: "關閉 Chrome 應用程式並重新掃描 QR Code。",
     },
-    En: {
+    en: {
       step1: `Click ⋮`,
       step2: "Choose “settings” > “Advanced” > “Websites” > “Camera”",
       step3: "To find the blocked URL for our service and allow access.",
@@ -22,19 +21,19 @@ const Android = ({ language }) => {
     <div className={styles.android}>
       <h3 className={styles.title}>允許你的攝影機權限</h3>
       <div className={styles.step}>
-        <h4>{language == "Zh" ? "步驟一" : "Step1"}：</h4>
+        <h4>{language == "zh" ? "步驟一" : "Step1"}：</h4>
         <p>{data[language].step1}</p>
       </div>
       <div className={styles.step}>
-        <h4>{language == "Zh" ? "步驟二" : "Step2"}：</h4>
+        <h4>{language == "zh" ? "步驟二" : "Step2"}：</h4>
         <p>{data[language].step2}</p>
       </div>
       <div className={styles.step}>
-        <h4>{language == "Zh" ? "步驟三" : "Step3"}：</h4>
+        <h4>{language == "zh" ? "步驟三" : "Step3"}：</h4>
         <p>{data[language].step3}</p>
       </div>
       <div className={styles.step}>
-        <h4>{language == "Zh" ? "步驟四" : "Step4"}：</h4>
+        <h4>{language == "zh" ? "步驟四" : "Step4"}：</h4>
         <p>{data[language].step4}</p>
       </div>
       <div className={styles.topSection}>

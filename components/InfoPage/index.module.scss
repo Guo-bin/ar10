@@ -7,13 +7,15 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba($color: #ffff, $alpha: 0.9);
+  background-color: rgba($color: #ffff, $alpha: 0.7);
   z-index: 2;
   display: flex;
   flex-direction: column;
   margin: auto;
   align-items: center;
   animation: scaleUp 0.8s;
+  backdrop-filter: blur(3px);
+  box-shadow: 0px 8px 60px #ffffff;
   & .title {
     font-weight: 800;
     margin: 21px;
@@ -38,10 +40,26 @@
       display: flex;
       align-items: center;
       margin: 28px;
+
       & .icon {
         width: 48px;
         height: 48px;
         vertical-align: middle;
+      }
+      & .iconContainer {
+        margin: auto;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: rgba(46, 138, 183, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        & .introIcon {
+          width: 24px;
+          height: 24px;
+        }
       }
       & .textArea {
         margin-left: 12px;
@@ -103,6 +121,5 @@
   }
   100% {
     transform: scale(1);
-    opacity: 0.8;
   }
 }

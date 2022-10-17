@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: Avenir Next LT Pro, Avenir, Open Sans, Lantinghei TC,
     Lantinghei SC, Noto Sans TC, sans-serif;
+  // overflow: hidden;
 }
 
 a {
@@ -18,3 +19,13 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
+
+// .arBody {
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   overflow: hidden;
+// }

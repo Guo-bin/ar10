@@ -1,12 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import styles from "./index.module.scss";
-import classnames from "classnames";
 import close from "public/images/icon/close.svg";
 import Play from "components/AudioPlayer/Play";
 import Pause from "components/AudioPlayer/Pause";
-import classNames from "classnames";
-
-const AudioPlayer = ({ setOpenItem, openItem }) => {
+import styles from "./index.module.scss";
+const AudioPlayer = ({ setOpenItem, openItem, audio }) => {
   // state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -72,7 +69,7 @@ const AudioPlayer = ({ setOpenItem, openItem }) => {
 
   return (
     <div className={styles.audioPlayer}>
-      <audio ref={audioPlayer} src='/song.mp3' preload='metadata'></audio>
+      <audio ref={audioPlayer} src={audio} preload='metadata'></audio>
 
       <button onClick={togglePlayPause} className={styles.playPause}>
         {isPlaying ? <Pause /> : <Play className={styles.play} />}

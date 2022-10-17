@@ -33,8 +33,9 @@
     right: 0;
     margin: auto;
     left: 0;
-
+    pointer-events: none;
     & .chinese {
+      pointer-events: all;
       margin: 0 auto;
       border-radius: 50%;
       font-size: 20px;
@@ -58,6 +59,7 @@
       z-index: 10;
     }
     & .english {
+      pointer-events: all;
       z-index: -1;
       position: relative;
       transition: all 0.3s;

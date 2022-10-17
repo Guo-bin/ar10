@@ -1,62 +1,40 @@
 .container {
-  position: fixed;
-  // top: 0;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
-  // margin: auto;
-  height: calc(
-    100vh + 10px
-  ); //這邊設定100vh+10px，設定%數的話，這邊會去抓body的100%，body是被arPage撐大成100vh+100px，所以這邊也會變成100vh+100px，但這樣太大了所以寫固定高度100vh+10px，(其實可以寫100vh就好?)
+  // position: fixed;
   // height: 100%;
-  width: 100vw;
+  // width: 100vw;
   // overflow: hidden;
-  // background-color: aqua;
+  // z-index: 1;
+  //上面是之前鎖住的版本
+
+  position: fixed;
+  height: calc(100vh + 10px);
+  width: 100vw;
+
+  //上面是滑動的版本
+  & .background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 62px);
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
-// @media (max-width: 530px) {
-//   .container {
-//     // height: calc(100vh + 1px);
-//     height: 100%;
-//     width: 100vw;
-//     & .video {
-//       width: 100%;
-//       height: 100%;
-//     }
-//   }
-// }
-// .container {
-//   position: fixed;
-//   // height: calc(100vh + 1px);
-//   height: 100%;
-//   width: 100vw;
-//   overflow: hidden;
-//   z-index: 1;
-
-//   & .background {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     height: calc(100% - 62px);
-//     & img {
-//       height: 100%;
-//       width: 100%;
-//       object-fit: cover;
-//     }
-//   }
-// }
-
-// @media (min-width: 530px) {
-//   .container {
-//     // height: calc(100vh + 1px);
-//     height: 100%;
-//     width: 100vw;
-//     & .video {
-//       width: 100%;
-//       height: 100%;
-//     }
-//     & .background {
-//       height: calc(100% - 100px);
-//     }
-//   }
-// }
+@media (min-width: 530px) {
+  .container {
+    // height: calc(100vh + 1px);
+    height: 100%;
+    width: 100vw;
+    & .video {
+      width: 100%;
+      height: 100%;
+    }
+    & .background {
+      height: calc(100% - 100px);
+    }
+  }
+}

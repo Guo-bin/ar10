@@ -4,15 +4,97 @@
   position: relative;
   z-index: 1;
   height: 240px;
+  width: 260px;
 
   & .cardTitle {
     position: absolute;
     width: 120px;
-    left: 160px;
-    top: 24px;
+    left: 140px;
+    top: 30px;
     font-size: 16px;
     color: $font-color;
+    font-weight: 700;
+
+    & p {
+      transition: 0.5s ease-in-out;
+      background-repeat: no-repeat;
+      background-size: 0% 50%;
+      background-position: left 100%;
+      box-decoration-break: clone;
+      padding: 3px 0.1em;
+      word-wrap: break-word;
+      background-image: linear-gradient(
+        to right,
+        rgba(241, 120, 182, 0.7) 0%,
+        rgba(241, 120, 182, 0.7) 100%
+      );
+      display: inline;
+    }
   }
+
+  // & .orangeBackground {
+  //   width: 160px;
+  //   margin-top: 15px;
+  //   right: 0;
+  //   position: absolute;
+  //   text-align: center;
+
+  //   & span {
+  //     & img {
+  //       display: inline;
+  //       transform: translateY(5px);
+  //     }
+  //   }
+  //   & .title {
+
+  //   }
+  //   & p {
+  //     display: inline;
+  //     width: 150px;
+  //     inline-size: 120px;
+  //     padding: 0 0.1em;
+  //     background-image: linear-gradient(to right, #b88b5a 0%, #b88b5a 100%);
+  //     background-repeat: no-repeat;
+  //     background-size: 100% 70%;
+  //     background-position: left 85%;
+  //     box-decoration-break: clone;
+  //     word-wrap: break-word;
+  //     // transform: translate(-10px);
+  //   }
+  // }
+  // & .orangeBackground {
+  //   // background-color: #152c60;
+  //   position: absolute;
+  //   top: 0;
+  //   width: 150px;
+  //   right: 0;
+  //   margin-left: auto;
+
+  //   & span {
+  //     margin-left: auto;
+  //     display: inline;
+  //     width: 150px;
+  //     inline-size: 120px;
+  //     padding: 0 0.1em;
+  //     background-image: linear-gradient(to right, #b88b5a 0%, #b88b5a 100%);
+  //     background-repeat: no-repeat;
+  //     background-size: 100% 70%;
+  //     background-position: left 85%;
+  //     box-decoration-break: clone;
+  //     word-wrap: break-word;
+  //     & p {
+  //       // text-align: center;
+  //       // display: inline;
+  //       // position: relative;
+  //       box-decoration-break: split;
+  //       background: #000;
+  //     }
+  //     & img {
+  //       // display: inline;
+  //       transform: translateY(5px);
+  //     }
+  //   }
+  // }
   & .backgroundImg {
     position: absolute;
     top: 0;
@@ -23,26 +105,31 @@
   }
   & .arrow {
     position: absolute;
-    left: 137px;
-    top: 25px;
+    left: 117px;
+    top: 30px;
   }
   & .picture {
     position: absolute;
     width: 160px;
     height: 160px;
-    bottom: 10px;
+    bottom: 16px;
+    right: 120px;
     border-radius: 4px;
     overflow: hidden;
-    & .img {
+    box-shadow: 0px 0px 10px rgb(178, 178, 178);
+    transform: perspective(200px) rotateY(4deg);
+    & img {
+      margin: auto;
       width: 100%;
       height: 100%;
+      border-radius: 4px;
       object-fit: cover;
     }
   }
   & .dottedLine {
     position: absolute;
     top: 164px;
-    right: 60px;
+    right: 35px;
   }
 }
 
@@ -50,15 +137,35 @@
   position: relative;
   z-index: 1;
   height: 240px;
+  width: 260px;
 
   & .cardTitle {
     position: absolute;
     width: 120px;
-    left: 20px;
-    top: 24px;
+    right: 140px;
+    top: 30px;
     font-size: 16px;
     color: $font-color;
+    font-weight: 700;
+
+    & p {
+      transition: 0.5s ease-in-out;
+      background-repeat: no-repeat;
+      background-size: 0% 50%;
+      background-position: left 100%;
+      box-decoration-break: clone;
+      padding: 3px 0.1em;
+
+      word-wrap: break-word;
+      background-image: linear-gradient(
+        to right,
+        rgba(241, 120, 182, 0.7) 0%,
+        rgba(241, 120, 182, 0.7) 100%
+      );
+      display: inline;
+    }
   }
+
   & .backgroundImg {
     width: 100%;
     height: 100%;
@@ -66,19 +173,25 @@
   }
   & .arrow {
     position: absolute;
-    left: 137px;
-    top: 25px;
+    left: 117.72px;
+    top: 30px;
     transform: rotateY(180deg);
   }
   & .picture {
     position: absolute;
     width: 160px;
     height: 160px;
-    bottom: 10px;
-    right: 0;
+    bottom: 16px;
+    left: 120px;
     border-radius: 4px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgb(178, 178, 178);
+    transform: perspective(200px) rotateY(-4deg);
     & img {
+      border-radius: 4px;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -87,7 +200,7 @@
   & .dottedLine {
     position: absolute;
     top: 164px;
-    left: 60px;
+    left: 35px;
     transform: rotateY(180deg);
   }
 }
@@ -95,16 +208,17 @@
 @media (min-width: 540px) {
   .cardRight {
     height: 400px;
+    width: 500px;
     & .cardTitle {
       font-size: 20px;
       left: 280px;
-      top: 28px;
+      top: 35px;
       width: 180px;
     }
 
     & .arrow {
-      left: 248px;
-      top: 30px;
+      left: 220px;
+      top: 35px;
       height: 35px;
       width: 21px;
       object-fit: cover;
@@ -112,6 +226,8 @@
     & .picture {
       width: 280px;
       height: 280px;
+      right: 250px;
+      bottom: 25px;
       & img {
         width: 100%;
         height: 100%;
@@ -121,21 +237,22 @@
       top: 260px;
       // transform: scale(1.5);
       width: 73px;
-      right: 100px;
+      right: 70px;
     }
   }
   .cardLeft {
     height: 400px;
+    width: 500px;
     & .cardTitle {
       font-size: 20px;
       left: 40px;
-      top: 28px;
+      top: 35px;
       width: 180px;
     }
 
     & .arrow {
-      left: 248px;
-      top: 30px;
+      left: 260px;
+      top: 35px;
       height: 35px;
       width: 21px;
       object-fit: cover;
@@ -143,6 +260,8 @@
     & .picture {
       width: 280px;
       height: 280px;
+      left: 250px;
+      bottom: 25px;
       & img {
         width: 100%;
         height: 100%;
@@ -152,7 +271,7 @@
       top: 260px;
 
       width: 73px;
-      left: 100px;
+      left: 70px;
     }
   }
 }

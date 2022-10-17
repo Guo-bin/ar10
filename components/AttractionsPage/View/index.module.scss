@@ -1,7 +1,7 @@
 @import "styles/palette.scss";
 .view {
-  width: fit-content;
   margin-bottom: 16px;
+
   width: calc(50% - 20px);
   & .imgContainer {
     width: 100%;
@@ -17,10 +17,19 @@
       object-fit: cover;
       position: absolute;
     }
+    & .pass {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    & .isPass {
+      display: inline-block;
+    }
   }
 
   & .title {
-    margin-top: 10px;
+    margin: 10px 0 16px;
     font-weight: 700;
     text-align: center;
     width: 100%;
@@ -32,6 +41,12 @@
 @media (min-width: 540px) {
   .view {
     width: calc(50% - 40px);
+
+    & .imgContainer {
+      & .pass {
+        width: 88px;
+      }
+    }
 
     & .title {
       margin-top: 20px;

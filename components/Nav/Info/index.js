@@ -5,7 +5,7 @@ const Info = ({ language }) => {
   return (
     <div className={styles.info} id='InfoPage'>
       <img className={styles.icon} src={icon.src} alt='' />
-      <p className={styles.title}> {language == "Zh" ? "操作介紹" : "Info"}</p>
+      <p className={styles.title}> {language == "zh" ? "操作介紹" : "Info"}</p>
     </div>
   );
 };

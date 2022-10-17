@@ -1,6 +1,6 @@
 import React, { memo } from "react";
-import Info from "./Info";
 import { useRouter } from "next/router";
+import Info from "./Info";
 import LanguageGuide from "./LanguageGuide";
 import classnames from "classnames";
 import Intro from "./Intro";
@@ -9,7 +9,16 @@ import { AudioPlayer } from "components/AudioPlayer";
 import ChangeLanguage from "./ChangeLanguage";
 import Thumbnail from "./Thumbnail";
 import styles from "./index.module.scss";
-const Nav = ({ setOpenItem, openItem, language, setLanguage }) => {
+const Nav = ({
+  setOpenItem,
+  openItem,
+  language,
+  setLanguage,
+  audio,
+  closeUpImg,
+  ARProUrl,
+  mind,
+}) => {
   const router = useRouter();
   const clickItemHandler = (e) => {
     const clickItemName = e.target.id;
@@ -23,10 +32,12 @@ const Nav = ({ setOpenItem, openItem, language, setLanguage }) => {
   return (
     <nav
       className={classnames(styles.nav, {
-        [styles.showAudio]: openItem == "LanguageGuide",
+        [styles.showAudio]: openItem == "LanguageGuide" && audio,
       })}>
       <div className={styles.navItem} onClick={clickItemHandler}>
-        <Thumbnail />
+        {ARProUrl && mind && closeUpImg && (
+          <Thumbnail closeUpImg={closeUpImg} />
+        )}
         <Info setOpenItem={setOpenItem} language={language} />
         <LanguageGuide setOpenItem={setOpenItem} language={language} />
         <Intro setOpenItem={setOpenItem} language={language} />
@@ -39,7 +50,11 @@ const Nav = ({ setOpenItem, openItem, language, setLanguage }) => {
         />
       </div>
       <div className={styles.languagePlayer} key={router.asPath}>
-        <AudioPlayer setOpenItem={setOpenItem} openItem={openItem} />
+        <AudioPlayer
+          setOpenItem={setOpenItem}
+          openItem={openItem}
+          audio={audio}
+        />
       </div>
     </nav>
   );

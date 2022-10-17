@@ -1,27 +1,37 @@
-import React, { useEffect } from "react";
+import React from "react";
+// import pass from "public/images/icon/pass.svg";
+import pass from "public/images/icon/pinktick.svg";
+import classNames from "classnames";
 import { useRouter } from "next/router";
-import dog from "public/images/dog.jpg";
-import sun from "public/images/sun.jpg";
 import styles from "./index.module.scss";
-import { lang } from "moment";
-const View = ({ data, language, target, img }) => {
+const View = ({ data, language, setOpenItem, targetFound, id }) => {
+  const { fullImg, name, url } = data;
   const router = useRouter();
 
+  const clickHandler = () => {
+    if (router.query.attraction !== url) {
+      router.push({
+        pathname: `/${router.query.parkId}/${url}`,
+        query: { language: language },
+      });
+      setOpenItem("null");
+    } else {
+      setOpenItem("ImageExamplePage");
+    }
+  };
   return (
-    <div
-      className={styles.view}
-      onClick={() => {
-        router.push({
-          pathname: `/test/sun`,
-          query: { language: language },
-        });
-      }}>
+    <div className={styles.view} onClick={clickHandler}>
       <div className={styles.imgContainer}>
-        <img className={styles.img} src={sun.src} alt='' />
+        <img className={styles.img} src={fullImg} alt='' />
+        <img
+          className={classNames(styles.pass, {
+            [styles.isPass]: targetFound[id],
+          })}
+          src={pass.src}
+          alt=''
+        />
       </div>
-      <p className={styles.title}>
-        {language == "Zh" ? "布農族百步蛇的報仇" : "Nimama hou pon"}
-      </p>
+      <p className={styles.title}>{name[language]}</p>
     </div>
   );
 };

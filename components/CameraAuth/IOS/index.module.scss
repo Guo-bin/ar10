@@ -1,3 +1,4 @@
+@import "styles/palette.scss";
 .ios {
   height: 100%;
   display: flex;
@@ -5,7 +6,11 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  color: $font-color;
   & img {
     margin-bottom: 32px;
+  }
+  & p {
+    color: $font-color;
   }
 }

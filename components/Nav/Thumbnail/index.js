@@ -1,10 +1,9 @@
 import React from "react";
-import bridge from "public/images/bridge.png";
 import styles from "./index.module.scss";
-const Thumbnail = () => {
+const Thumbnail = ({ closeUpImg }) => {
   return (
     <div className={styles.thumbnail} id='ImageExamplePage'>
-      <img className={styles.img} src={bridge.src} alt='' />
+      <img className={styles.img} src={closeUpImg} alt='' />
     </div>
   );
 };
